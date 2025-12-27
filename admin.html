@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="gen()">Créer un bon</button>
+<img id="qr"/>
+<script>
+function gen() {
+  fetch("https://YOUR_BACKEND_URL/admin/generate",{method:"POST"})
+    .then(r=>r.json())
+    .then(d=>qr.src=d.qr);
+}
+</script>
+</body>
+</html>
