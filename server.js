@@ -18,7 +18,7 @@ db.run(`CREATE TABLE IF NOT EXISTS vouchers (
 app.post("/admin/generate", async (req, res) => {
   const id = uuidv4();
   db.run("INSERT INTO vouchers (id) VALUES (?)", [id]);
-  const qr = await QRCode.toDataURL(`https://YOUR_FRONTEND_URL/verify.html?id=${id}`);
+  const qr = await QRCode.toDataURL(`https://https://bons-qr.vercel.app/verify.html?id=${id}`);
   res.json({ id, qr });
 });
 
